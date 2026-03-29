@@ -1,0 +1,39 @@
+langchain~=0.3.27
+langgraph~=0.5.4
+langchain_community~=0.3.27
+langchain_core~=0.3.72
+
+# LLM
+langchain_groq
+
+# Embeddings (HuggingFace API)
+langchain-huggingface
+sentence-transformers
+
+# Vector DB
+langchain-qdrant
+
+# Search
+tavily-python
+
+# Backend
+fastapi
+uvicorn
+python-multipart
+
+# Database
+motor
+pymongo
+
+# Frontend
+streamlit
+
+# Utilities
+requests~=2.32.4
+python-dotenv~=1.1.1
+PyYAML~=6.0.2
+pydantic~=2.11.7
+
+# Parsing
+beautifulsoup4~=4.13.4
+bs4~=0.0.2
