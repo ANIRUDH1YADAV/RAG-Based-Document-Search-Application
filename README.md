@@ -254,10 +254,6 @@ Form Data:
 ```
 
 ### 2. Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/dhruvsinghal09/Adaptive-Rag.git
 cd AdaptiveRag
 
 # Create virtual environment
@@ -273,8 +269,8 @@ pip install -r requirements.txt
 Create a `.env` file in the project root:
 
 ```env
-# OpenAI Configuration
-OPENAI_API_KEY=your_openai_api_key_here
+# GROQ Configuration
+GROQ_API_KEY=your_openai_api_key_here
 
 # Tavily Search Configuration
 TAVILY_API_KEY=your_tavily_api_key_here
