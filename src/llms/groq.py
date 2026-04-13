@@ -1,13 +1,13 @@
 """
-Groq LLM initialization and configuration.
+Gemini LLM initialization and configuration.
 """
 
 import os
 
 from dotenv import load_dotenv
-from langchain_groq import ChatGroq
+from langchain_google_genai import ChatGoogleGenerativeAI
 
 load_dotenv()
-os.environ["GROQ_API_KEY"] = os.getenv("GROQ_API_KEY", "")
+os.environ["GOOGLE_API_KEY"] = os.getenv("GOOGLE_API_KEY", "")
 
-llm = ChatGroq(model="llama-3.1-8b-instant")
+llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash")
