@@ -192,7 +192,11 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ── Form ──────────────────────────────────────────────
-username = st.text_input("", placeholder="Enter your name (optional)...", label_visibility="collapsed")
+username = st.text_input(
+    "Your name",
+    placeholder="Enter your name (optional)...",
+    label_visibility="collapsed",
+)
 
 if st.button(" Start Chatting", use_container_width=True):
     if "session_id" not in st.session_state:

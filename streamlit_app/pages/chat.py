@@ -69,12 +69,18 @@ with st.sidebar:
 
         if file_description:
             if file_key not in st.session_state.uploaded_files:
-                success = document_upload_rag(uploaded_file, file_description)
+                success, error_message = document_upload_rag(
+                    uploaded_file,
+                    file_description,
+                )
                 if success:
                     st.success(f"Uploaded: {uploaded_file.name}")
                     st.session_state.uploaded_files[file_key] = True
                 else:
-                    st.error(f"Document Upload Failed: {uploaded_file.name}")
+                    st.error(
+                        f"Document Upload Failed: {uploaded_file.name}"
+                        + (f"\n\n{error_message}" if error_message else "")
+                    )
         else:
             st.warning("Please describe your document before uploading.")
 

@@ -4,7 +4,7 @@ langchain_community~=0.3.27
 langchain_core~=0.3.72
 
 # LLM
-langchain_groq
+langchain_google_genai
 
 # Embeddings (HuggingFace API)
 langchain-huggingface
@@ -30,6 +30,7 @@ streamlit
 
 # Utilities
 requests~=2.32.4
+chardet~=5.2.0
 python-dotenv~=1.1.1
 PyYAML~=6.0.2
 pydantic~=2.11.7
@@ -37,3 +38,6 @@ pydantic~=2.11.7
 # Parsing
 beautifulsoup4~=4.13.4
 bs4~=0.0.2
+
+
+pypdf

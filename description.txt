@@ -1,14 +1,1 @@
-**Retriever Tool Instruction: Resume Information**
-
-**Purpose:** This retriever tool is designed to assist in extracting information from uploaded resumes for the purpose of answering questions related to job applications.
-
-**Usage:**
-
-1. **Upload a Resume:** Select the resume file you wish to query.
-2. **Enter a Question:** Type a specific question about the uploaded resume, such as "What are the candidate's work experience highlights?" or "What skills are mentioned in the resume?"
-3. **Retrieve Information:** Click the "Retrieve" button to extract relevant information from the resume and provide a response to your question.
-4. **Review Response:** Review the response provided by the tool to ensure it accurately answers your question.
-
-**Important Note:** This retriever tool is only intended for answering questions about the uploaded content. It is not a substitute for human judgment or evaluation. Use the information provided by the tool to inform your decisions, but always consider multiple sources and perspectives when making important decisions.
-
-**Disclaimer:** The accuracy and completeness of the information provided by this tool are not guaranteed. If you are unsure about the information provided, please verify it through other means.
+resume
