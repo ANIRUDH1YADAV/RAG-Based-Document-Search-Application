@@ -7,8 +7,9 @@ from typing import Literal
 from langchain_core.prompts import PromptTemplate
 
 from src.config.settings import Config
-from src.llms.groq import llm
+from src.llms.llama import llm
 from src.models.state import State
+from src.models.verification_result import VerificationResult
 
 config = Config()
 
@@ -70,19 +71,17 @@ def verify_answer(state: State) -> Literal["__end__", "generate"]:
         template=config.prompt("verify_prompt"),
         input_variables=["question", "context", "final_answer"]
     )
+    llm_with_verification = llm.with_structured_output(VerificationResult)
 
-    # ← Parse plain text instead of structured output
-    chain = verify_prompt | llm
-    result = chain.invoke({
+    verify_chain = verify_prompt | llm_with_verification
+
+    result = verify_chain.invoke({
         "question": question,
         "context": context,
         "final_answer": final_answer
     })
 
-    raw = result.content.strip().lower()
-    faithful = "true" in raw or "yes" in raw or "faithful" in raw
-
-    if faithful:
+    if result.faithful:
         return "__end__"
     else:
         print("Generating again as answer is not faithful.")
