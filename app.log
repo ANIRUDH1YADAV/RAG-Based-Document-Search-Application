@@ -6,3 +6,37 @@
 2026-03-29 12:04:34,074 - INFO - New session: 733cc92f-ec01-45c8-aee6-8352207055e6
 2026-03-29 12:09:06,910 - INFO - New session: 2f5bbe2b-113e-4d53-aadd-da1172641ccd
 2026-03-29 12:10:55,105 - INFO - New session: 4287d638-5e06-4221-92fd-5d4a7be26d72
+2026-05-14 22:24:44,434 - INFO - New session: 085f7730-b006-4329-b1d7-3fbe2509afad
+2026-05-14 22:25:15,145 - ERROR - Document upload request failed: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /rag/documents/upload (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-05-14 23:20:23,514 - INFO - New session: dc8765a9-8ad6-42cd-8944-fbff3a7698a3
+2026-05-14 23:20:37,891 - ERROR - Document upload request failed: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /rag/documents/upload (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-05-14 23:21:52,063 - INFO - New session: bb474a43-eaf9-4f50-b8c2-9fac219f9039
+2026-05-14 23:22:06,659 - ERROR - Document upload request failed: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /rag/documents/upload (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-05-14 23:31:04,345 - INFO - New session: 8e6a9977-f985-47df-9395-bff530b7c99e
+2026-05-14 23:52:43,522 - INFO - New session: c2f1b3b1-3de9-4fa7-9b25-6ee38a310e51
+2026-05-14 23:59:37,785 - INFO - New session: 9a37db65-5dce-4bfc-ba2c-14d32249aa04
+2026-05-14 23:59:52,132 - ERROR - Document upload request failed: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /rag/documents/upload (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-05-15 00:02:19,794 - INFO - New session: f1e4dd9d-b0f3-4f77-8827-2549b90b801d
+2026-05-15 00:02:30,140 - INFO - Upload API response status: 500
+2026-05-15 00:04:42,805 - INFO - New session: 2eb5dc2b-cdaa-4c9d-b944-4367bf0af104
+2026-05-15 00:05:03,808 - INFO - Upload API response status: 200
+2026-05-15 00:06:41,066 - ERROR - Backend query request failed: HTTPConnectionPool(host='127.0.0.1', port=8000): Read timed out. (read timeout=20)
+2026-05-15 08:59:32,237 - INFO - New session: 752dca57-261a-4a44-b7ab-de73bf5a6a2f
+2026-05-15 08:59:49,131 - INFO - Upload API response status: 200
+2026-05-15 09:01:30,812 - ERROR - Backend query request failed: HTTPConnectionPool(host='127.0.0.1', port=8000): Read timed out. (read timeout=20)
+2026-05-15 09:04:16,937 - INFO - New session: a9c26426-eb80-4222-bf54-8b5455817da9
+2026-05-15 09:04:38,805 - INFO - Upload API response status: 200
+2026-05-15 09:05:26,949 - ERROR - Backend query request failed: HTTPConnectionPool(host='127.0.0.1', port=8000): Read timed out. (read timeout=20)
+2026-05-15 09:11:32,229 - INFO - New session: a73a829c-773b-47cb-ba49-58a2c04bf22c
+2026-05-15 09:11:44,856 - INFO - Upload API response status: 200
+2026-05-15 09:43:53,835 - INFO - New session: fd5aeb1d-1b11-4726-8955-f4d456ad14b2
+2026-05-15 09:44:05,043 - ERROR - Document upload request failed: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /rag/documents/upload (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-05-15 09:45:51,744 - INFO - New session: 9538f756-9c16-4afc-b1ef-f6890d0059c3
+2026-05-15 09:46:05,233 - INFO - Upload API response status: 200
+2026-05-15 12:14:40,341 - INFO - Upload API response status: 200
+2026-05-15 12:14:48,175 - INFO - New session: affefc6f-8bcd-4a8b-af89-47995f6cbe2b
+2026-05-15 12:15:11,889 - INFO - Upload API response status: 200
+2026-05-15 12:26:33,213 - INFO - New session: 6165c6bf-fa44-4102-9494-e0ac891fed79
+2026-05-15 12:26:53,034 - ERROR - Document upload request failed: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /rag/documents/upload (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))
+2026-05-15 12:28:24,104 - INFO - New session: 9fae2027-0b40-44e3-a931-e4450683b6dd
+2026-05-15 12:28:36,181 - ERROR - Document upload request failed: HTTPConnectionPool(host='127.0.0.1', port=8000): Max retries exceeded with url: /rag/documents/upload (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=8000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))

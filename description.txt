@@ -1,1 +1,1 @@
-resume
+Tool Instruction: This retriever tool is designed to answer questions specifically about the uploaded "resume" document. Please enter your questions related to the content of the resume, and the tool will provide relevant information and answers based on the uploaded document. The tool is limited to responding to inquiries about the resume's content and will not provide general information or answer questions unrelated to the document.

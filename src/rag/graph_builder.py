@@ -2,6 +2,8 @@
 Graph builder module for the adaptive RAG system.
 """
 
+import re
+
 from langchain_community.tools import TavilySearchResults
 from langchain_core.messages import AIMessage
 from langchain_core.prompts import PromptTemplate
@@ -12,12 +14,25 @@ from src.rag.reAct_agent import agent_executor
 from src.rag.retriever_setup import get_retriever
 from src.config.settings import Config
 from src.llms.groq import llm  # ← Changed from src.llms.openai
-from src.models.grade import Grade
-from src.models.route_identifier import RouteIdentifier
 from src.models.state import State
 from src.tools.graph_tools import routing_tool, doc_tool
 
 config = Config()
+
+
+def _extract_route(text: str) -> str:
+    normalized = text.strip().lower()
+    match = re.search(r"\b(index|general|search)\b", normalized)
+    return match.group(1) if match else "general"
+
+
+def _extract_binary_score(text: str) -> str:
+    normalized = text.strip().lower()
+    if re.search(r"\byes\b", normalized):
+        return "yes"
+    if re.search(r"\bno\b", normalized):
+        return "no"
+    return "no"
 
 
 # Node implementations
@@ -37,17 +52,18 @@ def query_classifier(state: State):
     print("docs received from Qdrant")
     print(context)
 
-    llm_with_structured_output = llm.with_structured_output(RouteIdentifier)
     classify_prompt = PromptTemplate(
         template=config.prompt("classify_prompt"),
         input_variables=["question", "context"]
     )
-    chain = classify_prompt | llm_with_structured_output
+    chain = classify_prompt | llm
     result = chain.invoke({"question": question, "context": context})
+    content = result.content if hasattr(result, "content") else str(result)
+    route = _extract_route(content)
     print("result received is in query classifier")
-    print(result.route)
+    print(route)
 
-    return {"messages": state["messages"], "route": result.route, "latest_query": question}
+    return {"messages": state["messages"], "route": route, "latest_query": question}
 
 
 def general_llm(state: State):
@@ -116,13 +132,13 @@ def grade(state: State):
     context = state["messages"][-1].content
     question = state["latest_query"]
 
-    llm_with_grade = llm.with_structured_output(Grade)
-
-    chain_graded = grading_prompt | llm_with_grade
+    chain_graded = grading_prompt | llm
     result = chain_graded.invoke({"question": question, "context": context})
+    content = result.content if hasattr(result, "content") else str(result)
+    binary_score = _extract_binary_score(content)
 
-    print(result)
-    return {"messages": state["messages"], "binary_score": result.binary_score}
+    print(binary_score)
+    return {"messages": state["messages"], "binary_score": binary_score}
 
 
 def rewrite_query(state: State):

@@ -3,10 +3,12 @@ Core configuration and environment settings.
 """
 
 import os
+from pathlib import Path
 
 from dotenv import load_dotenv
 
-load_dotenv()
+BASE_DIR = Path(__file__).resolve().parents[2]
+load_dotenv(dotenv_path=BASE_DIR / ".env")
 
 
 class Settings:

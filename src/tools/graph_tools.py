@@ -2,14 +2,15 @@
 Tools for graph routing and document grading.
 """
 
+import re
+
 from typing import Literal
 
 from langchain_core.prompts import PromptTemplate
 
 from src.config.settings import Config
-from src.llms.llama import llm
+from src.llms.groq import llm
 from src.models.state import State
-from src.models.verification_result import VerificationResult
 
 config = Config()
 
@@ -71,17 +72,24 @@ def verify_answer(state: State) -> Literal["__end__", "generate"]:
         template=config.prompt("verify_prompt"),
         input_variables=["question", "context", "final_answer"]
     )
-    llm_with_verification = llm.with_structured_output(VerificationResult)
-
-    verify_chain = verify_prompt | llm_with_verification
+    verify_chain = verify_prompt | llm
 
     result = verify_chain.invoke({
         "question": question,
         "context": context,
         "final_answer": final_answer
     })
+    content = result.content if hasattr(result, "content") else str(result)
+    normalized = content.strip().lower()
+    match = re.search(r"faithful\s*[:=]\s*(true|false)", normalized)
+    if match:
+        faithful = match.group(1) == "true"
+    elif re.search(r"\btrue\b", normalized) and not re.search(r"\bfalse\b", normalized):
+        faithful = True
+    else:
+        faithful = False
 
-    if result.faithful:
+    if faithful:
         return "__end__"
     else:
         print("Generating again as answer is not faithful.")
