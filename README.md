@@ -510,24 +510,7 @@ Contributions are welcome! Please follow these steps:
 
 ---
 
-## ❓ FAQ
 
-**Q: How do I upload multiple documents?**  
-A: Upload one document at a time through the Streamlit interface. Each upload creates a new indexed collection.
-
-**Q: What's the maximum file size?**  
-A: Limited by system memory and Qdrant storage. Typical limit is 100MB per file.
-
-**Q: Can I use different LLM providers?**  
-A: Currently configured for OpenAI. You can modify `src/llms/openai.py` to use other providers.
-
-**Q: How is conversation history stored?**  
-A: MongoDB stores all chat messages with timestamps and session IDs for full context retention.
-
-**Q: Can I run this without web search?**  
-A: Yes, remove Tavily dependency. Queries will use index or general LLM only.
-
----
 
 ## 💬 Support & Contact
 
